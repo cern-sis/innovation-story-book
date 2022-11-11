@@ -1,10 +1,22 @@
-const path = require('path');
+const path = require("path");
 
+// https://github.com/webpack-contrib/less-loader/issues/303
 module.exports = (baseConfig) => {
   baseConfig.config.module.rules.push({
     test: /\.less$/,
-    use: ['style-loader', 'css-loader', 'less-loader'],
-    include: path.resolve(__dirname, '../src/'),
+    use: [
+      { loader: "style-loader" },
+      { loader: "css-loader" },
+      {
+        loader: "less-loader",
+        options: {
+          lessOptions:{
+            modifyVars:  require("../src/styleVariables"),
+          }
+        },
+      },
+    ],
+    include: path.resolve(__dirname, "../src/"),
   });
 
   return baseConfig.config;
