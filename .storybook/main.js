@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   staticDirs: ["../public"],
@@ -5,7 +7,14 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/preset-create-react-app",
+    {
+      "name": "@storybook/preset-create-react-app",
+      "options": {
+        "craOverrides": {
+          "fileLoaderExcludes": ["less"]
+        }
+      }
+    }
   ],
   framework: "@storybook/react",
   core: {
@@ -14,4 +23,19 @@ module.exports = {
   features: {
     interactionsDebugger: true,
   },
+  // webpackFinal: async (config) => {
+  //   config.module.rules.push({
+  //     test: /\.less$/,
+  //     use: ["style-loader", {
+  //       loader: "css-loader", 
+  //       options: { 
+  //         modules: true, 
+  //         localIdentName: "[local]___[hash:base64:5]"
+  //       }}, 
+  //       "less-loader"
+  //     ],
+  //     include: path.resolve(__dirname, "../src"),
+  //   });
+  //   return config;
+  // }
 };
