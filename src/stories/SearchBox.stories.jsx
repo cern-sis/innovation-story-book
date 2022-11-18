@@ -10,3 +10,10 @@ export default {
   const Template = (args) => <SearchBox {...args} />;
 
   export const Example = Template.bind({});
+
+  Example.args = {
+    value: 'value example',
+    placeholder: 'placeholder',
+    onSearch: ()=>{},
+    namespace: 'namepsace'
+  };

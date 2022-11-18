@@ -4249,7 +4249,7 @@ ansi-to-html@^0.6.11:
 
 antd@^5.0.0:
   version "5.0.0"
-  resolved "https://registry.npmjs.org/antd/-/antd-5.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.0.0.tgz#bc8cb87931fa832dd664c4bec8b7047310a7d9ab"
   integrity sha512-3IGHXl3KokGrkYIk2P2fQytDloTmdw9vgMHJzFsusBrAEnRXoN8oSWrN/N6D7f5hWqRusSaAIlPTsYSIcPHFrQ==
   dependencies:
     "@ant-design/colors" "^6.0.0"
