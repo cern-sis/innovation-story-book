@@ -8,11 +8,11 @@ export const SearchBox = ({
   namespace,
   className,
 }: {
-  value?: string,
-  placeholder?: string,
-  onSearch: Function,
-  namespace: string,
-  className?: string,
+  value?: string;
+  placeholder?: string;
+  onSearch: Function;
+  namespace: string;
+  className?: string;
 }) => {
   return (
     <>
@@ -42,3 +42,4 @@ export const SearchBox = ({
     </>
   );
 };
+ 
